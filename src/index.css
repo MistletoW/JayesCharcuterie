@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Jaye's Extravagant Charcuterie - Elegant Design System */
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 40 33% 97%;
+    --foreground: 30 15% 15%;
+
+    /* Card surfaces - slightly warmer */
+    --card: 40 30% 99%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Primary - Deep burgundy wine */
+    --primary: 350 35% 28%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Secondary - Soft beige */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 30 15% 20%;
+
+    /* Muted - Warm gray */
+    --muted: 35 15% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Accent - Champagne gold */
+    --accent: 38 45% 65%;
+    --accent-foreground: 30 15% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 350 35% 28%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --gold: 38 55% 58%;
+    --gold-light: 38 40% 75%;
+    --cream: 40 33% 97%;
+    --cream-dark: 35 25% 92%;
+    --wine: 350 35% 28%;
+    --wine-light: 350 30% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-script {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+}
+
+@layer components {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-cream-dark {
+    background-color: hsl(var(--cream-dark));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  .text-wine {
+    color: hsl(var(--wine));
+  }
+
+  .bg-wine {
+    background-color: hsl(var(--wine));
+  }
+}
+
+@layer utilities {
+  .carousel-track {
+    animation: scroll 60s linear infinite;
+  }
+
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .elegant-shadow {
+    box-shadow: 0 4px 30px -10px hsl(30 15% 15% / 0.1);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(38 55% 58%), hsl(38 40% 75%));
+  }
+
+  .divider-ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+  }
+}
